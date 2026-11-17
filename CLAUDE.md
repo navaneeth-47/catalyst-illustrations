@@ -40,5 +40,6 @@ These are quick reminders. The style guide has the details.
 - Black 1–1.5px outlines go on main structures only. Inner elements are stroke-free fills.
 - Modern, clean, not detailed, but not too minimal either. Tell the story.
 - Use the standard blob ([assets/standard-blob.svg](assets/standard-blob.svg)) as the background, filled with Bg-Blue.
+- **Always resize the blob to suit the illustration:** about 1.3× the artwork width, minimum 220, sitting slightly low behind the hero. `fitBlob()` in the builder does this. Never leave it at the full 380 width by default.
 - The canvas is 380×235. Use no text, no shadows and no off-palette colours.
 - For gradients, fade Primary into the colour behind it, never via alpha.

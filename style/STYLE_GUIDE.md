@@ -48,7 +48,12 @@ No other colours are allowed: no greys, off-blues, purples, teals or oranges. Wh
 
 ## 4. Composition recipe
 
-1. **Background blob:** use [assets/standard-blob.svg](../assets/standard-blob.svg) at `translate(0 58–64) scale(1.3523)`, which spans the full 380 width, in Bg-Blue. It must be the first child, named `Background`.
+1. **Background blob:** use [assets/standard-blob.svg](../assets/standard-blob.svg) in Bg-Blue. It must be the first child, named `Background`.
+   - **Hard rule: always resize the blob to suit the illustration.** Never leave it full-width by default, because on compact pieces it looks far too big.
+   - **Width:** about 1.3× the artwork width, keeping the aspect ratio. The minimum is 220 and the maximum is the 380 canvas.
+   - **Placement:** centre it horizontally behind the hero, sitting slightly low so it grounds the hero.
+   - Ignore sparkles, dashes and dots when measuring the artwork.
+   - The builder's `fitBlob()` does this automatically. If you hand-edit an illustration, re-check the blob.
 2. **Hero object:** White body with a Black outline and a Tint inner panel.
 3. **1–2 Primary accents,** such as a badge with a White-Static glyph, an active node, a key arrow, or a gauge.
 4. **Flow and story cues:** gradient lines with Primary chevron heads, or light Primary connection lines at group opacity 0.4–0.55.
