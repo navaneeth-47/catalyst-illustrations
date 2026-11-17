@@ -30,7 +30,9 @@ description: Draw a new Catalyst empty-state / spot illustration (or restyle a r
 Read [style/STYLE_GUIDE.md](../../../style/STYLE_GUIDE.md), especially §8, layout variety.
 
 - **Pick a layout type** that fits the story, and that hasn't dominated the frame's recent illustrations. Run a quick read-only `use_figma` call to list the names and positions of the last 8 nodes.
-- **Look at the approved recipes** in [examples/approved/](../../../examples/approved/) and [examples/](../../../examples/) for quality only: finish, Primary use, how connectors land.
+- **Look at the approved recipes for quality only:** finish, Primary use, how connectors land.
+  - These are the layers in the Figma file whose names start or end with **"Star"**. List them live, then screenshot the 2–4 closest to the brief.
+  - Read [examples/approved/INDEX.md](../../../examples/approved/INDEX.md) for what they teach: thin 1px strokes, 1–2 big overlapping objects, diagonal Tint shading, tiny Primary, double dash.
 - **Don't copy a recipe's arrangement.** Build from the shape kit in `lib/figma-build.js`.
 
 Work on a 380×235 canvas, with the hero around (190, 120) and roughly 280×180 of artwork. Build it in layers, bottom to top:
