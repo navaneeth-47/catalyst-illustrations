@@ -20,7 +20,7 @@ Row-Level Security · Workflow Automation · Table Security · User Management �
 
 ## What the Star set teaches (measured)
 
-1. **Thin strokes:** the originals use **0.8–1px** outlines almost everywhere. Use 1px for main outlines, and go above 1.2px only for deliberate emphasis such as arrows or handles.
+1. **Consistent thin strokes:** the originals use one thin weight throughout. The house rule is now **1.4px for every Black stroke**, unless the user specifies otherwise (see STYLE_GUIDE §3).
 2. **Few, big objects:** 1–2 large hero objects filling about 55–65% of the artwork, often **overlapping for depth**. Examples:
    - a database with a table in front
    - two stacked databases with a clock badge

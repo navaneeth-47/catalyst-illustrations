@@ -37,7 +37,8 @@ These are quick reminders. The style guide has the details.
 - Use only the 6 Illus colour variables. Every paint must be bound.
 - **Zero Black fills.** Black (`--zcat-illus-Black`) is only ever a stroke colour.
 - **Primary-Blue covers about 7–8% of the artwork.** Give it to a couple of key elements. Never shrink objects to meet the budget.
-- Black 1–1.5px outlines go on main structures only. Inner elements are stroke-free fills.
+- **Strokes are always 1.4px unless the user specifies otherwise.** This covers all Black outlines, lines, glyphs, sparkles and dashes, and the builder enforces it.
+- Black outlines go on main structures only. Inner elements are stroke-free fills.
 - Modern, clean, not detailed, but not too minimal either. Tell the story.
 - Use the standard blob ([assets/standard-blob.svg](assets/standard-blob.svg)) as the background, filled with Bg-Blue.
 - **Always resize the blob to suit the illustration:** about 1.3× the artwork width, minimum 220, sitting slightly low behind the hero. `fitBlob()` in the builder does this. Never leave it at the full 380 width by default.

@@ -38,11 +38,12 @@ No other colours are allowed: no greys, off-blues, purples, teals or oranges. Wh
 ## 3. Geometry
 
 - **Canvas:** 380×235. Keep the hero centred near (190, 120).
-- **Strokes:**
-  - Main outline: 1.5px Black, round caps and joins.
-  - Secondary outline and glyphs: 1–1.2px.
-  - Sparkles and dashes: 1px.
-  - Emphasis and arrow strokes: 2–3px.
+- **Strokes. Hard rule: always 1.4px unless the user specifies otherwise.**
+  - Every Black stroke is 1.4px with round caps and joins: outlines, dividers, connector lines, glyph lines, sparkles and dashes.
+  - The builder enforces this automatically.
+  - Exceptions:
+    - Coloured accent strokes keep their designed width: Primary flow lines and arrows at 2–3px, White-Static glyphs on Primary.
+    - Thick "band" strokes (> 4px) used to draw handles and palms keep their width.
 - **Corner radii:** 5–8 for containers, 3 for bars, 1.5–2 for tiny cells.
 - **Skeleton bars:** Tint, 3–6px tall, fully rounded.
 
