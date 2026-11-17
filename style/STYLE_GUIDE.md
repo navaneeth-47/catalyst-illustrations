@@ -77,8 +77,8 @@ Check every item on this list:
 - [ ] The blob is behind everything, and the sparkles and dash don't collide with objects.
 - [ ] The layer is named meaningfully, e.g. `Security – Secure Code`.
 
-## 8. Dark mode
+## 8. Where illustrations live
 
-Frame `Frame 2370` (12835:21) renders the Illus variables in dark mode. Finished pieces are often moved there.
+New illustrations always go into **illustration-master → page "New" → frame "AI Illustration" (`12835:21`)**. The frame is laid out in rows, with a 40px gap between items, rows about 460px apart, and an Inter 12 caption 82px below each illustration.
 
-To review light mode, keep the node in the grid frame, or clone it there temporarily and delete the clone afterwards.
+Because every paint is bound to the Illus variables, switching the frame's variable mode (Light / Dark) re-themes all the illustrations.

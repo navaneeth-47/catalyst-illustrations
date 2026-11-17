@@ -13,13 +13,16 @@ Generate **consistent Catalyst-style illustrations in Figma** by describing what
 2. **Connect Figma MCP.**
    - **Claude Code CLI:** the repo includes `.mcp.json`, which points to the official Figma remote MCP server. Run `/mcp`, select **figma** and sign in.
    - **Claude desktop / claude.ai / VS Code:** enable the **Figma** connector in Settings → Connectors.
-3. **Ask for an illustration.** For example:
+3. **Open the illustration-master file in Figma** when Claude asks. You need edit access:
+   https://www.figma.com/design/4b0Qe4JYow6jNjOvKbLbIX/illustration-master?node-id=12835-21
+   New illustrations are added to the frame **"AI Illustration"** on page **"New"**, at the end of the last row, each with a caption.
+4. **Ask for an illustration.** For example:
    - "Empty state for *no API keys yet*"
    - "Illustration for WebSocket data streams"
    - "Redesign this in our style" (attach an image)
    - "Design these 3 separately" (attach a reference sheet)
 
-Claude then confirms the target Figma frame and builds each illustration as a 380×235 node. It checks the result with a screenshot and reports the node IDs.
+Claude then builds each illustration as a 380×235 node in the AI Illustration frame. It checks the result with a screenshot and reports the node IDs.
 
 ## What's inside
 
@@ -43,9 +46,9 @@ Main structures get a White body and a 1.5px outline. Inner details are stroke-f
 
 Flow is shown with Primary gradients that fade into the background. There is no text and there are no shadows. The look is modern and clean, but always tells the story.
 
-## Using another Figma file
+## Using another Figma file (only if you explicitly ask)
 
-Give Claude the Figma link of the frame or page to draw into. You need edit access to that file. The builder finds the colours in this order:
+By default, Claude always draws into illustration-master → AI Illustration. If you explicitly ask for another place, give Claude the link to that frame or page. You need edit access to that file. The builder finds the colours in this order:
 
 1. **Local variables** named `--zcat-illus-*`, for example in a copy of illustration-master.
 2. **The published Illus library**, if it is enabled in the file. The variables are imported by key.

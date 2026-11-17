@@ -9,8 +9,9 @@ description: Draw a new Catalyst empty-state / spot illustration (or restyle a r
 
 - **Figma MCP is connected** (`use_figma`, `get_screenshot`, `create_session`). If it is not, tell the user how to connect, using the steps in CLAUDE.md, and stop.
 - **Also load the Figma plugin skills `figma-use` and `figma-generate-design`** if they are available. Pass `skillNames: "figma-use,figma-generate-design"` on every `use_figma` call.
-- **Target:**
-  - Read [config/figma-target.json](../../../config/figma-target.json). If the user gave a Figma link, parse the fileKey and node-id from it (change `-` to `:` in the node-id).
+- **The user has opened illustration-master:**
+  - Always ask them to open https://www.figma.com/design/4b0Qe4JYow6jNjOvKbLbIX/illustration-master?node-id=12835-21 and confirm before you draw.
+  - The fileKey is `4b0Qe4JYow6jNjOvKbLbIX`. The full target details are in [config/figma-target.json](../../../config/figma-target.json).
   - Call `create_session(fileKey, task)` once and reuse its sessionId.
 
 ## 1. Understand the request
@@ -48,9 +49,8 @@ Some constraints matter most:
 - Copy the full [lib/figma-build.js](../../../lib/figma-build.js).
 - Set `TARGET_ID`. Replace the sample in BUILDS with your `builds.push(['Category – Name', () => \`...svg...\`])` entries.
 - Send it as one `use_figma` call. The script is atomic, so on error, fix the problem and resend.
-- **Set the target:**
-  - `TARGET_ID` is the frame or page ID. Use `''` for the current page.
-  - `START_Y` is `1650` only for the illustration-master grid. Use `0` everywhere else.
+- **The target is fixed:** `TARGET_ID = '12835:21'`, the frame "AI Illustration" on page "New" of illustration-master. Change it only if the user explicitly asks for another place.
+- Placement is automatic: the end of the last row, a 40px gap, and a new row every 460px. A caption is added under each illustration, made from the part of the name after "–". Name builds `Category – Caption`.
 - **Check `varSource` in the result:**
   - `local` or `library`: fine.
   - `created`: the file had no Illus colours, so a local collection was made. Mention this to the user.

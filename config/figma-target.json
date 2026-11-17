@@ -1,10 +1,10 @@
 {
   "fileName": "illustration-master",
   "fileKey": "4b0Qe4JYow6jNjOvKbLbIX",
-  "page": "New",
-  "frame": { "name": "Catalyst Empty state", "id": "12833:6323" },
-  "gridFrameId": "12833:6324",
-  "startY": 1650,
-  "darkModeFrame": { "name": "Frame 2370", "id": "12835:21" },
-  "variableCollection": "Illus Global Colors"
+  "url": "https://www.figma.com/design/4b0Qe4JYow6jNjOvKbLbIX/illustration-master?node-id=12835-21",
+  "page": { "name": "New", "id": "12766:1993" },
+  "targetFrame": { "name": "AI Illustration", "id": "12835:21" },
+  "layout": { "gap": 40, "rowStep": 460, "caption": "Inter Regular 12, centred, 82px below the illustration" },
+  "variableCollection": "Illus Global Colors",
+  "legacyGrid": { "name": "Catalyst Empty state", "id": "12833:6323", "gridId": "12833:6324" }
 }

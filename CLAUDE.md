@@ -9,10 +9,12 @@ This repo is the single source of truth for producing **Catalyst empty-state / s
      - **Claude Code CLI:** this repo ships `.mcp.json` with the official remote Figma server (`https://mcp.figma.com/mcp`). Run `/mcp`, pick **figma** and authenticate in the browser.
      - **claude.ai / desktop / VS Code:** enable the **Figma** connector in Settings → Connectors, then restart the session.
    - Do not draw anything until the connection works. Call `whoami` to confirm it.
-2. **Ask which Figma file and frame to draw into.** The default is in [config/figma-target.json](config/figma-target.json). Confirm it, or ask for a Figma link if the user works in another file.
-   - Any file the user can edit works.
-   - For a file other than illustration-master, set `TARGET_ID` to their frame or page and set `START_Y = 0`.
-   - If the file has no Illus colour variables, the builder creates a local "Illus Global Colors" collection with Light and Dark modes. The result reports `varSource: created`. Tell the user this happened, once.
+2. **Always ask the user to open the illustration-master file in Figma:**
+   https://www.figma.com/design/4b0Qe4JYow6jNjOvKbLbIX/illustration-master?node-id=12835-21
+   - They need edit access. Wait until they confirm the file is open.
+   - **Every new illustration goes into the frame "AI Illustration" (`12835:21`) on page "New".**
+   - Do not draw into other files or frames unless the user explicitly asks. If they do, set `TARGET_ID` to that frame or page. If that file has no Illus colours, the builder creates a local copy and reports `varSource: created`. Tell the user if that happens.
+   - The builder appends each illustration to the end of the last row, wraps to a new row when the current one is full, and adds a caption below it (Inter 12) like the existing ones.
 3. **Ask the user what illustration they want.** A short description is enough, for example "empty state for no API keys". A reference image also works; translate it into our style. Ask one clarifying question at most. Then build.
 
 ## How to build (summary)
