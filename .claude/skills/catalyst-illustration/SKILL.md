@@ -50,6 +50,30 @@ Some constraints matter most:
 - Black icon glyphs on a White node are fine at 1–1.2px.
 - **Connectors must land on objects,** and arrows must point at something. Leave about 8–12px of clearance between arrows and objects.
 
+## 2b. Prefer the designer's own parts (highest quality)
+
+Hand-drawn parts beat code-drawn shapes, so compose from the **designer's originals** whenever a needed object exists among the Star layers in Frame 2367:
+- the robot chat bubble from Chat
+- the robot from Chatbot
+- the database cylinder from Data Store or Database Sync
+- the window from Functions
+- documents, folders and bins
+- the Primary badge from Database Sync
+- the blob and the double dash (`Line-8`)
+
+How:
+1. In one `use_figma` call, find the part by name inside its Star frame.
+2. `clone()` it, `appendChild` it into a new 380×235 frame in AI Illustration, and `rescale()` or position it.
+3. Remove any sub-parts you don't need. Check them first: groups sometimes contain extra objects.
+4. Swap badge glyphs by keeping the badge circle and adding a White-Static glyph.
+5. Apply the 1.4px stroke rule and fit the blob.
+
+Composition: 1 big hero plus 1 overlapping secondary object, and a Primary badge on the seam where they meet.
+
+Draw new shapes with the SVG builder only when no suitable part exists. Keep them few and large, in the same visual language as the parts.
+
+Reference result: "New recipe result v2" (node `13388:2`). It's the Chat robot bubble over the Data Store cylinder, with the Database Sync badge turned into an MCP plug.
+
 ## 3. Build
 
 - Copy the full [lib/figma-build.js](../../../lib/figma-build.js).
