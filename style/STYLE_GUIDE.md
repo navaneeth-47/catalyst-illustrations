@@ -99,6 +99,10 @@ Craft lessons to apply when drawing:
 - **Tiny, precise Primary:** eyes, one badge, one glyph.
 - **Few connector networks.**
 - **Decoration:** 2 sparkles and a double dash, two short stacked lines.
+- **Perfect geometry** (approved on Translation and File Conversion):
+  - Curved arrows and orbits must be **true circular arcs**, built with SVG `A` commands through `arcArrow()`. Never use freehand Bézier curves for them.
+  - Objects that sit on a loop are centred exactly **on** that circle. Concentric elements share one centre.
+- **Remove what isn't needed:** after the first build, delete anything that doesn't tell the story, such as extra gears, stray dots, motion dashes, sidebar bars and URL pills. Clean beats busy.
 
 Before composing, pick one **layout type** that fits the story:
 
