@@ -82,7 +82,33 @@ Check every item on this list:
 - [ ] The blob is behind everything, and the sparkles and dash don't collide with objects.
 - [ ] The layer is named meaningfully, e.g. `Security – Secure Code`.
 
-## 8. Where illustrations live
+## 8. Avoid redundant designs (layout variety)
+
+Reuse **parts** and **quality**, never **layouts**.
+
+| Reuse freely | Never copy |
+|---|---|
+| Shape kit (cloud, monitor, gear, shield, badge, server, window, connectors), stroke and fill rules, spacing, Primary budget, blob fitting | The overall arrangement of an existing recipe or illustration |
+
+Recipes in `examples/` are **quality references**. Study them for finish and problem-solving, but don't use them as templates.
+
+Before composing, pick one **layout type** that fits the story:
+
+1. **Hub & spokes:** a centre object with radiating nodes.
+2. **Left → right flow:** inputs → core → outputs.
+3. **Loop / cycle:** objects around a centre, with arrows that circulate.
+4. **Branching tree:** one source fanning down or out.
+5. **Hero + badge:** one big object with a Primary badge or accent overlapping it.
+6. **Overlap / layered:** 2–3 objects stacked in depth, like a window over a card over a device.
+7. **Stack / layers:** vertical layers or tiers.
+8. **Before / after or exchange:** two objects with something passing between them.
+9. **Container + contents:** a cloud, window or shield holding the story.
+
+**Difference check before building:**
+- Look at the 6–8 most recent illustrations in the frame, and avoid the layout type used most among them.
+- Make sure the new piece doesn't share layout type, hero shape *and* position with its nearest neighbour. If it would, rearrange it.
+
+## 9. Where illustrations live
 
 New illustrations always go into **illustration-master → page "New" → frame "AI Illustration" (`12835:21`)**. The frame is laid out in rows, with a 40px gap between items, rows about 460px apart, and an Inter 12 caption 82px below each illustration.
 
