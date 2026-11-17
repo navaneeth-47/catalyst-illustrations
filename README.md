@@ -45,4 +45,15 @@ Flow is shown with Primary gradients that fade into the background. There is no 
 
 ## Using another Figma file
 
-Give Claude the Figma link of the frame to draw into. The target file must contain the **"Illus Global Colors"** variables, either locally or from a library. The builder finds them by name, or imports them by key.
+Give Claude the Figma link of the frame or page to draw into. You need edit access to that file. The builder finds the colours in this order:
+
+1. **Local variables** named `--zcat-illus-*`, for example in a copy of illustration-master.
+2. **The published Illus library**, if it is enabled in the file. The variables are imported by key.
+3. **Neither of these:** the builder **creates a local "Illus Global Colors" collection**. It has the same 6 variable names, with Light and Dark modes and values copied from illustration-master. The illustrations stay on-palette and switch to dark mode correctly.
+   - Limitation: these local copies are not linked to the library. If the master colours change later, re-bind or update the copies.
+   - On Figma plans limited to one mode per collection, only the Light mode is created.
+
+Placement adapts to the target:
+- **A frame:** the first free slot. If there is none, a new row goes below the content and the frame grows.
+- **An auto-layout frame:** the frame positions the illustration itself.
+- **A page:** to the right of the existing content.

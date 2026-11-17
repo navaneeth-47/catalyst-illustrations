@@ -10,6 +10,9 @@ This repo is the single source of truth for producing **Catalyst empty-state / s
      - **claude.ai / desktop / VS Code:** enable the **Figma** connector in Settings → Connectors, then restart the session.
    - Do not draw anything until the connection works. Call `whoami` to confirm it.
 2. **Ask which Figma file and frame to draw into.** The default is in [config/figma-target.json](config/figma-target.json). Confirm it, or ask for a Figma link if the user works in another file.
+   - Any file the user can edit works.
+   - For a file other than illustration-master, set `TARGET_ID` to their frame or page and set `START_Y = 0`.
+   - If the file has no Illus colour variables, the builder creates a local "Illus Global Colors" collection with Light and Dark modes. The result reports `varSource: created`. Tell the user this happened, once.
 3. **Ask the user what illustration they want.** A short description is enough, for example "empty state for no API keys". A reference image also works; translate it into our style. Ask one clarifying question at most. Then build.
 
 ## How to build (summary)

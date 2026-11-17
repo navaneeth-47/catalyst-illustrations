@@ -48,8 +48,15 @@ Some constraints matter most:
 - Copy the full [lib/figma-build.js](../../../lib/figma-build.js).
 - Set `TARGET_ID`. Replace the sample in BUILDS with your `builds.push(['Category – Name', () => \`...svg...\`])` entries.
 - Send it as one `use_figma` call. The script is atomic, so on error, fix the problem and resend.
+- **Set the target:**
+  - `TARGET_ID` is the frame or page ID. Use `''` for the current page.
+  - `START_Y` is `1650` only for the illustration-master grid. Use `0` everywhere else.
+- **Check `varSource` in the result:**
+  - `local` or `library`: fine.
+  - `created`: the file had no Illus colours, so a local collection was made. Mention this to the user.
+  - To refuse instead of creating colours, set `CREATE_VARS_IF_MISSING = false`.
 - Required result for every node: `unbound: []` and `blackFills: 0`. Otherwise fix the body and rebuild. Delete the bad node first with `(await figma.getNodeByIdAsync(id)).remove()`.
-- If `pos` is `null`, there was no free slot. Ask the user where to put the node, or move it to the right of the frame's content.
+- If `grewFrame` is `true`, there was no free slot, so the frame was extended to fit a new row. Mention this to the user.
 
 ## 4. Review (mandatory)
 
