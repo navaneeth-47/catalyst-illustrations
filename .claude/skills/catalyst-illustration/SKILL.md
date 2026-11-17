@@ -30,49 +30,31 @@ description: Draw a new Catalyst empty-state / spot illustration (or restyle a r
 Read [style/STYLE_GUIDE.md](../../../style/STYLE_GUIDE.md), especially §8, layout variety.
 
 - **Pick a layout type** that fits the story, and that hasn't dominated the frame's recent illustrations. Run a quick read-only `use_figma` call to list the names and positions of the last 8 nodes.
-- **Look at the approved recipes for quality only:** finish, Primary use, how connectors land.
-  - These are the layers in the Figma file whose names start or end with **"Star"**. List them live, then screenshot the 2–4 closest to the brief.
-  - Read [examples/approved/INDEX.md](../../../examples/approved/INDEX.md) for what they teach: thin 1px strokes, 1–2 big overlapping objects, diagonal Tint shading, tiny Primary, double dash.
-- **Don't copy a recipe's arrangement.** Build from the shape kit in `lib/figma-build.js`.
+- **Never use recipes.** This is a user rule, and it covers:
+  - existing illustrations
+  - "Star" layers
+  - cloned parts from the designer's originals
+  - saved layouts
+
+  Design every piece fresh from the brief and the style guide. Drawing from scratch gave better results.
+- Build from the shape kit in `lib/figma-build.js` and new SVG shapes.
 
 Work on a 380×235 canvas, with the hero around (190, 120) and roughly 280×180 of artwork. Build it in layers, bottom to top:
 
-1. `blob(58–64)`
-2. faint flow and decoration groups (`<g opacity="0.45–0.6">`)
-3. hero body (White + `S(1.5)`)
+1. `blob()`. It's resized automatically.
+2. faint flow and decoration groups (`<g opacity="0.45–0.85">`)
+3. hero body: White with a 1.4px Black outline, plus diagonal Tint shading inside
 4. inner Tint panels and bars
 5. Primary accent(s) and White-Static glyphs
-6. `sp()` ×2 and `dash()` ×1–2 in empty corners
+6. 2 sparkles and a double dash in empty corners
 
 Some constraints matter most:
 
-- **Black only on strokes.** Inner elements are stroke-free.
-- Black icon glyphs on a White node are fine at 1–1.2px.
+- **Black only on strokes,** always 1.4px. Inner elements are stroke-free.
 - **Connectors must land on objects,** and arrows must point at something. Leave about 8–12px of clearance between arrows and objects.
+- **Prefer few, big, clear objects** over many small ones. Give each variation a different layout type (§8).
 
-## 2b. Prefer the designer's own parts (highest quality)
-
-Hand-drawn parts beat code-drawn shapes, so compose from the **designer's originals** whenever a needed object exists among the Star layers in Frame 2367:
-- the robot chat bubble from Chat
-- the robot from Chatbot
-- the database cylinder from Data Store or Database Sync
-- the window from Functions
-- documents, folders and bins
-- the Primary badge from Database Sync
-- the blob and the double dash (`Line-8`)
-
-How:
-1. In one `use_figma` call, find the part by name inside its Star frame.
-2. `clone()` it, `appendChild` it into a new 380×235 frame in AI Illustration, and `rescale()` or position it.
-3. Remove any sub-parts you don't need. Check them first: groups sometimes contain extra objects.
-4. Swap badge glyphs by keeping the badge circle and adding a White-Static glyph.
-5. Apply the 1.4px stroke rule and fit the blob.
-
-Composition: 1 big hero plus 1 overlapping secondary object, and a Primary badge on the seam where they meet.
-
-Draw new shapes with the SVG builder only when no suitable part exists. Keep them few and large, in the same visual language as the parts.
-
-Reference result: "New recipe result v2" (node `13388:2`). It's the Chat robot bubble over the Data Store cylinder, with the Database Sync badge turned into an MCP plug.
+Reference results built this way, with no recipes: "Plug-in Access" `13390:2`, "Orbit Access" `13390:32`, "Layered Access" `13390:56`.
 
 ## 3. Build
 
@@ -115,5 +97,5 @@ Offer one concrete tweak. Do not modify nodes the user has moved into other fram
 
 When the user approves a new piece or gives new style feedback:
 
-- Add the recipe to `examples/`.
 - Add the rule to `style/STYLE_GUIDE.md`, so later sessions stay consistent.
+- Do **not** save the piece as a recipe. Recipes are not used.

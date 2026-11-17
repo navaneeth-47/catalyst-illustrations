@@ -91,7 +91,14 @@ Reuse **parts** and **quality**, never **layouts**.
 |---|---|
 | Shape kit (cloud, monitor, gear, shield, badge, server, window, connectors), stroke and fill rules, spacing, Primary budget, blob fitting | The overall arrangement of an existing recipe or illustration |
 
-Recipes in `examples/` are **quality references**. Study them for finish and problem-solving, but don't use them as templates.
+**Recipes are not used.** Never start from an existing illustration, layout or cloned part. Every piece is designed fresh.
+
+Craft lessons to apply when drawing:
+- **Few, big objects:** 1–2 large hero objects, often overlapping for depth.
+- **Diagonal Tint shading** inside main objects, for depth without gradients.
+- **Tiny, precise Primary:** eyes, one badge, one glyph.
+- **Few connector networks.**
+- **Decoration:** 2 sparkles and a double dash, two short stacked lines.
 
 Before composing, pick one **layout type** that fits the story:
 

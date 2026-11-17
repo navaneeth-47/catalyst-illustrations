@@ -25,7 +25,7 @@ The full procedure is in [.claude/skills/catalyst-illustration/SKILL.md](.claude
 2. Sketch the composition in your head: hero object, 1–2 Primary accents, flow cues, blob, sparkles and a dash.
 3. Copy [lib/figma-build.js](lib/figma-build.js).
    - Write your illustration as a `builds.push([name, () => svgBody])` entry.
-   - Start from the closest recipe in [examples/](examples/).
+   - **Never use recipes or existing illustrations as a starting point** (user rule). Design fresh from the brief and the style guide.
    - Send it as the `code` of one `use_figma` call.
 4. The script binds every colour to the Illus variables, audits Black fills and places the node in a free grid slot. Make sure `unbound` is `[]` and `blackFills` is `0`.
 5. Take a `get_screenshot` of each new node and look at it critically. Fix anything that is off, then report the node IDs to the user.

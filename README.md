@@ -32,7 +32,6 @@ Claude then builds each illustration as a 380×235 node in the AI Illustration f
 | `.claude/skills/catalyst-illustration/SKILL.md` | The step-by-step build and review workflow. |
 | `style/STYLE_GUIDE.md` | The house style. These are hard rules. |
 | `lib/figma-build.js` | The `use_figma` script. It builds from SVG, binds all paints to variables, audits Black fills and places nodes. |
-| `examples/*.js` | Approved recipes for reuse (security, performance, workflow, pipeline). |
 | `assets/standard-blob.svg` | The standard background blob. |
 | `config/figma-target.json` | The default Figma file, frame and variable collection. |
 | `tools/primary_share.py` | Measures the Primary-Blue share of a screenshot (needs Pillow). |
